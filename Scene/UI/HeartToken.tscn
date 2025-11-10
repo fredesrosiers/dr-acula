@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bugaxryww3duc"]
+
+[ext_resource type="Texture2D" uid="uid://cbrugqasx57rg" path="res://Asset/UI/life_heart.png" id="1_ulcdn"]
+[ext_resource type="Script" uid="uid://dt2cewfyjschq" path="res://Script/UI/heart_token.gd" id="2_ao0v6"]
+
+[node name="HeartToken" type="Sprite2D"]
+texture = ExtResource("1_ulcdn")
+hframes = 2
+script = ExtResource("2_ao0v6")

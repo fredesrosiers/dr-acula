@@ -1,0 +1,213 @@
+[gd_scene load_steps=12 format=3 uid="uid://degms0pgy28bk"]
+
+[ext_resource type="Script" uid="uid://dphyydi8ef2e2" path="res://Script/UI/game_start.gd" id="1_ba2k8"]
+[ext_resource type="FontFile" uid="uid://bfj0mkxi42dp1" path="res://Asset/UI/HauntingEleanor-Regular.ttf" id="1_befgp"]
+[ext_resource type="StyleBox" uid="uid://ck15ar68gvx1" path="res://UITheme/UI_btn_normal.tres" id="2_kjdaj"]
+[ext_resource type="StyleBox" uid="uid://pdu3vg0snm7g" path="res://UITheme/UI_btn_hover.tres" id="3_ba2k8"]
+[ext_resource type="StyleBox" uid="uid://cxkms70kcqjh2" path="res://UITheme/UI_btn_pressed.tres" id="4_djukn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vung5"]
+font = ExtResource("1_befgp")
+font_size = 110
+font_color = Color(0.75686276, 0.039215688, 0.10980392, 1)
+outline_size = 9
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjdaj"]
+font = ExtResource("1_befgp")
+font_size = 67
+outline_size = 20
+outline_color = Color(0.75686276, 0.039215688, 0.10980392, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ba2k8"]
+line_spacing = 10.0
+font = ExtResource("1_befgp")
+font_size = 35
+outline_size = 6
+outline_color = Color(0.75686276, 0.039215688, 0.10980392, 1)
+
+[sub_resource type="Animation" id="Animation_befgp"]
+resource_name = "start"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.5, 0, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.5, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 2)
+}
+
+[sub_resource type="Animation" id="Animation_vung5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vung5"]
+_data = {
+&"RESET": SubResource("Animation_vung5"),
+&"start": SubResource("Animation_befgp")
+}
+
+[node name="GameStartUI" type="Control" node_paths=PackedStringArray("start_btn", "animation_player")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ba2k8")
+start_btn = NodePath("VBoxContainer/Button")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Dr. Acula"
+label_settings = SubResource("LabelSettings_vung5")
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Villagers' Blood"
+label_settings = SubResource("LabelSettings_kjdaj")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Kill as many as you can
+Move with ArrowPad or W, A, S, D.
+Collect Coins to upgrade your character."
+label_settings = SubResource("LabelSettings_ba2k8")
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.75686276, 0.039215688, 0.10980392, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_befgp")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = ExtResource("2_kjdaj")
+theme_override_styles/pressed = ExtResource("4_djukn")
+theme_override_styles/hover = ExtResource("3_ba2k8")
+text = "Start"
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vung5")
+}

@@ -1,0 +1,22 @@
+# Godot-specific
+.import/
+.export/
+mono/
+.godot/
+
+# Exported builds
+export/*
+*.exe
+*.zip
+*.pck
+*.wasm
+*.js
+*.html
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/

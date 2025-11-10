@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://crvtbuoehpfu3"]
+
+[ext_resource type="Script" uid="uid://doywk05m1tyrl" path="res://Script/UI/life_bar.gd" id="1_5f8hk"]
+[ext_resource type="PackedScene" uid="uid://bugaxryww3duc" path="res://Scene/UI/HeartToken.tscn" id="2_wjn8y"]
+
+[node name="LifeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 40.0
+offset_top = 60.0
+offset_right = 40.0
+offset_bottom = 60.0
+scale = Vector2(4, 4)
+script = ExtResource("1_5f8hk")
+heart_token_scene = ExtResource("2_wjn8y")

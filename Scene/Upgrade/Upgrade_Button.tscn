@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhgc4lhcykqd2"]
+
+[ext_resource type="Script" uid="uid://diljprfa24kqn" path="res://Script/Upgrade/upgrade_button.gd" id="1_p5l4n"]
+[ext_resource type="Texture2D" uid="uid://dthkc1dkeuwol" path="res://Asset/Upgrade/boots.png" id="2_no5nm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4egea"]
+font_color = Color(0.77738506, 0.14365882, 0.20661739, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ie00a"]
+font_size = 14
+
+[node name="Upgrade_Button" type="Button"]
+custom_minimum_size = Vector2(128, 208)
+offset_right = 128.0
+offset_bottom = 208.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_p5l4n")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 208.0
+alignment = 1
+
+[node name="Name" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Speed Boots"
+label_settings = SubResource("LabelSettings_4egea")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Image" type="TextureRect" parent="VBox"]
+layout_mode = 2
+texture = ExtResource("2_no5nm")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Description" type="Label" parent="VBox"]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+text = "Increase move speed by 10%"
+label_settings = SubResource("LabelSettings_ie00a")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

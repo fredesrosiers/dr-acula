@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://00hqnwl4qjba"]
+
+[ext_resource type="Texture2D" uid="uid://kcm8df8jtg1j" path="res://Asset/Attack/poison.png" id="1_165av"]
+[ext_resource type="Script" uid="uid://blq5mdd2d5v0l" path="res://Script/Attack/poison.gd" id="2_165av"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcbpo"]
+atlas = ExtResource("1_165av")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01iuj"]
+atlas = ExtResource("1_165av")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3btrf"]
+atlas = ExtResource("1_165av")
+region = Rect2(512, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvo4h"]
+atlas = ExtResource("1_165av")
+region = Rect2(768, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efy51"]
+atlas = ExtResource("1_165av")
+region = Rect2(1024, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr4ju"]
+atlas = ExtResource("1_165av")
+region = Rect2(0, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpcn7"]
+atlas = ExtResource("1_165av")
+region = Rect2(256, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbw1b"]
+atlas = ExtResource("1_165av")
+region = Rect2(512, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysdby"]
+atlas = ExtResource("1_165av")
+region = Rect2(768, 128, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhyk6"]
+atlas = ExtResource("1_165av")
+region = Rect2(1024, 128, 256, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmg3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcbpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01iuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3btrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvo4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efy51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr4ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpcn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbw1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysdby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhyk6")
+}],
+"loop": false,
+"name": &"animation",
+"speed": 11.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wcbpo"]
+radius = 25.588236
+height = 58.0
+
+[node name="Poison" type="AnimatedSprite2D" node_paths=PackedStringArray("collision")]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_hmg3n")
+animation = &"animation"
+frame = 9
+frame_progress = 1.0
+offset = Vector2(125, 0)
+flip_h = true
+script = ExtResource("2_165av")
+collision = NodePath("Area/Collision")
+metadata/_custom_type_script = "uid://vkynqcv4fbar"
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="Area"]
+position = Vector2(30, 5)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_wcbpo")
